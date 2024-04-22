@@ -6,10 +6,23 @@ import { ProductModule } from './product/product.module';
 import { CurrentModule } from './current/current.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { StoreModule } from './store/store.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [ProductTypeModule, ProductModule, CurrentModule, VehicleModule, StoreModule],
+  imports:[ 
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3308,
+      username: 'root',
+      password: '',
+      database: 'apicul',
+      entities: [],
+      synchronize: true,
+    })],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
+//[ProductTypeModule, ProductModule, CurrentModule, VehicleModule, StoreModule]
