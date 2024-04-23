@@ -7,7 +7,8 @@ import { CurrentModule } from './current/current.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { StoreModule } from './store/store.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
+import { UserModule } from './user/user.module';
+import { User } from './user/entities/user.entity';
 @Module({
   imports:[ 
     TypeOrmModule.forRoot({
@@ -17,9 +18,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: '',
       database: 'apicul',
-      entities: [],
+      entities: [User],
       synchronize: true,
-    })],
+    }), UserModule],
   controllers: [AppController],
   providers: [AppService],
 })
