@@ -1,4 +1,4 @@
-## Evidencia de la instalacion de laragom
+## Evidencia de la instalacion de Laragon
 <br>
 
 ![](https://github.com/AlejoCantl/apicul/blob/main/assets/Laragon.png)
