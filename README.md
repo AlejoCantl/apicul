@@ -1,3 +1,12 @@
+## Evidencia de la instalacion de laragom
+<br>
+
+![](https://github.com/AlejoCantl/apicul/blob/main/assets/Laragon.png)
+
+<br>
+<br>
+<br>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
