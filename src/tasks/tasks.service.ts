@@ -20,7 +20,7 @@ export class TasksService {
     if (!taskCategory || !taskStatus || !user) {
       throw new BadRequestException("TaskCategory, TaskStatus or User not found");
     }
-    return await this.tasksRepository.save({taskCategory, taskStatus, user,...createTaskDto});
+    return await this.tasksRepository.save({...createTaskDto,taskCategory, taskStatus, user});
   }
 
   async findAll() {
