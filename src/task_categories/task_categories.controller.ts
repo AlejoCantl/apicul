@@ -18,17 +18,17 @@ export class TaskCategoriesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.taskCategoriesService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.taskCategoriesService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTaskCategoryDto: UpdateTaskCategoryDto) {
-    return this.taskCategoriesService.update(+id, updateTaskCategoryDto);
+  update(@Param('id') id: number, @Body() updateTaskCategoryDto: UpdateTaskCategoryDto) {
+    return this.taskCategoriesService.update(id, updateTaskCategoryDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.taskCategoriesService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.taskCategoriesService.remove(id);
   }
 }

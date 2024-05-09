@@ -18,17 +18,17 @@ export class TaskStatusController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.taskStatusService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.taskStatusService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTaskStatusDto: UpdateTaskStatusDto) {
-    return this.taskStatusService.update(+id, updateTaskStatusDto);
+  update(@Param('id') id: number, @Body() updateTaskStatusDto: UpdateTaskStatusDto) {
+    return this.taskStatusService.update(id, updateTaskStatusDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.taskStatusService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.taskStatusService.remove(id);
   }
 }

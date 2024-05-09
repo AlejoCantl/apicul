@@ -7,8 +7,7 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectRepository(User) private UserRepository: Repository<User>
-  ) {}
+  constructor(@InjectRepository(User) private UserRepository: Repository<User>) {}
 
   create(createUserDto: CreateUserDto) {
     return this.UserRepository.save(createUserDto);
@@ -18,7 +17,7 @@ export class UserService {
     return this.UserRepository.find();
   }
 
-  findOne({id}: {id: number}) {
+  findOne(id: number) {
     return this.UserRepository.findOneBy({id});
   }
 

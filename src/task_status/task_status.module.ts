@@ -7,5 +7,6 @@ import { TaskStatus } from './entities/task_status.entity';
   imports: [TypeOrmModule.forFeature([TaskStatus])],
   controllers: [TaskStatusController],
   providers: [TaskStatusService],
+  exports: [TypeOrmModule],
 })
 export class TaskStatusModule {}

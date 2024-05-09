@@ -9,25 +9,17 @@ export class Task {
     id: number;
 
     @Column()
-    taskCategoryId: number;
-    @ManyToOne(() => TaskCategory)
-    @JoinColumn({ name: 'taskCategoryId' })
-    taskCategory: TaskCategory;
-
-    @Column()
-    taskStatusId: number;
-    @ManyToOne(() => TaskStatus)
-    @JoinColumn({ name: 'taskStatusId' })
-    taskStatus: TaskStatus;
-
-    @Column()
-    userId: number;
-    @ManyToOne(() => User)
-    @JoinColumn({ name: 'userId' })
-    user: User;
-
-    @Column()
     Description: string;
+
     @Column()
     Color: string;
+
+    @ManyToOne(() => TaskCategory, taskCategory => taskCategory.id, {eager: true})
+    taskCategory: TaskCategory;
+
+    @ManyToOne(() => TaskStatus, taskStatus => taskStatus.id, {eager: true})
+    taskStatus: TaskStatus;
+
+    @ManyToOne(() => User, user => user.id, {eager: true})
+    user: User;
 }
